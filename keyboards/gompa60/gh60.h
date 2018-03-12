@@ -1,5 +1,5 @@
-#ifndef GH60_H
-#define GH60_H
+#ifndef gompa60_H
+#define gompa60_H
 
 #include "quantum.h"
 #include "led.h"
@@ -29,20 +29,17 @@
  * K2C, K31 and  K3C are extra keys for ISO
  */
 #define KEYMAP( \
-    K30, K31, K40, K41, K02, K21, K10, K11, K70, K71, K50, K61, K60, K01, K00, \
-    K53, K52, K33, K32, K43, K42, K23, K22, K13, K12, K73, K62, K63, \
-    K64, K74, K54, K55, K34, K35, K44, K45, K24, K25, K14, K15,           K72, \
-    K75,      K66, K67, K56, K57, K36, K37, K26, K27, K16, K17,           K03, \
-    K65, K77, K76,           K51,                          K46, K47, K05, K04  \
+    K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, \
+    K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D, \
+    K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, K2C, K2D, \
+    K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K3A, K3B, K3C, K3D, \
+    K40, K41, K42,           K45,                K49, K4A, K4B, K4C, K4D  \
 ) { \
-    { K00, K01, K02, K03, K04, K05, KC_NO, KC_NO, }, \
-    { K10, K11, K12, K13, K14, K15, K16, K17, }, \
-    { KC_NO, K21, K22, K23, K24, K25, K26, K27, }, \
-    { K30, K31, K32, K33, K34, K35, K36, K37, }, \
-    { K40, K41, K42, K43, K44, K45, K46, K47, }, \
-    { K50, K51, K52, K53, K54, K55, K56, K57, }, \
-    { K60, K61, K62, K63, K64, K65, K66, K67, }, \
-    { K70, K71, K72, K73, K74, K75, K76, K77 } \
+    { K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D }, \
+    { K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D }, \
+    { K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, K2C, K2D }, \
+    { K30, K31, K32, K33, K34, K35, K36, K37, K38, K39, K3A, K3B, K3C, K3D }, \
+    { K40, K41, K42, KC_NO,    KC_NO,    K45, KC_NO,    KC_NO,    KC_NO,    K49, K4A, K4B, K4C, K4D }  \
 }
 
 /* ANSI variant. No extra keys for ISO */

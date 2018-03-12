@@ -1,4 +1,4 @@
-GH60
+Gompa60
 ===
 
 ![gh60 Rev C PCB](https://i.imgur.com/FejpoNF.jpg)
@@ -6,25 +6,25 @@ GH60
 A common 60% PCB.
 
 Keyboard Maintainer: QMK Community
-Hardware Supported: GH60 PCB
-Hardware Availability: http://blog.komar.be/projects/gh60-programmable-keyboard/
+Hardware Supported: typewriter keyboard
+Hardware Availability: secondhand
 
 Make example for this keyboard (after setting up your build environment):
 
-    make gh60:default
+    make gompa60:default
 
 See [build environment setup](https://docs.qmk.fm/build_environment_setup.html) then the [make instructions](https://docs.qmk.fm/make_instructions.html) for more information.
 
 
-## GH60 Hardware Information
+## gompa60 Hardware Information
 
     /* Column pin configuration
-    * col: 0   1   2   3   4   5   6   7  
-    * pin: B4, B5, F0, F1, F4, F5, F6, F7 
+    * col:  0   1   2   3   4   5   6   7 
+    * pin:  B4, B5, F0, F1, F4, F5, F6, F7  
     */
      
     /* Row pin configuration
-    * row: 0   1   2   3   4   5   6   7
+    * row: 0   1   2   3   4   5   6   7 
     * pin: D2, D3, D1, D0, D4, C6, D7, E6 
     */
      

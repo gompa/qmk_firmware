@@ -1,3 +1,43 @@
+#----------------------------------------------------------------------------
+# On command line:
+#
+# make all = Make software.
+#
+# make clean = Clean out built project files.
+#
+# make coff = Convert ELF to AVR COFF.
+#
+# make extcoff = Convert ELF to AVR Extended COFF.
+#
+# make program = Download the hex file to the device.
+#                Please customize your programmer settings(PROGRAM_CMD)
+#
+# make teensy = Download the hex file to the device, using teensy_loader_cli.
+#               (must have teensy_loader_cli installed).
+#
+# make dfu = Download the hex file to the device, using dfu-programmer (must
+#            have dfu-programmer installed).
+#
+# make flip = Download the hex file to the device, using Atmel FLIP (must
+#             have Atmel FLIP installed).
+#
+# make dfu-ee = Download the eeprom file to the device, using dfu-programmer
+#               (must have dfu-programmer installed).
+#
+# make flip-ee = Download the eeprom file to the device, using Atmel FLIP
+#                (must have Atmel FLIP installed).
+#
+# make debug = Start either simulavr or avarice as specified for debugging, 
+#              with avr-gdb or avr-insight as the front end for debugging.
+#
+# make filename.s = Just compile filename.c into the assembler code only.
+#
+# make filename.i = Create a preprocessed source file for use in submitting
+#                   bug reports to the GCC project.
+#
+# To rebuild project do "make clean" then "make all".
+#----------------------------------------------------------------------------
+
 # MCU name
 #MCU = at90usb1287
 MCU = atmega32u4
@@ -52,17 +92,20 @@ OPT_DEFS += -DBOOTLOADER_SIZE=4096
 #   comment out to disable the options.
 #
 BOOTMAGIC_ENABLE = yes		# Virtual DIP switch configuration(+1000)
-# MOUSEKEY_ENABLE = yes		# Mouse keys(+4700)
+MOUSEKEY_ENABLE = yes		# Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes		# Audio control and System control(+450)
-CONSOLE_ENABLE = yes		# Console for debug(+400)
-COMMAND_ENABLE = yes		# Commands for debug and configuration
+# CONSOLE_ENABLE = yes		# Console for debug(+400)
+# COMMAND_ENABLE = yes		# Commands for debug and configuration
 KEYBOARD_LOCK_ENABLE = yes	# Allow locking of keyboard via magic key
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
-# SLEEP_LED_ENABLE = yes	# Breathing sleep LED during USB suspend
-NKRO_ENABLE = yes			# USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
+SLEEP_LED_ENABLE = yes	    # Breathing sleep LED during USB suspend
+NKRO_ENABLE = yes		    # USB Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 # BACKLIGHT_ENABLE = yes	# Enable keyboard backlight functionality
-# MIDI_ENABLE = YES			# MIDI controls
+# MIDI_ENABLE = YES		# MIDI controls
 # UNICODE_ENABLE = YES		# Unicode
 # BLUETOOTH_ENABLE = yes	# Enable Bluetooth with the Adafruit EZ-Key HID
+RGBLIGHT_ENABLE = no    # Enable RGB Underglow
 
-LAYOUTS = 60_ansi 60_iso 60_ansi_split_bs_rshift
+ifndef QUANTUM_DIR
+	include ../../../../Makefile
+endif

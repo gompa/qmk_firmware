@@ -15,8 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef CONFIG_USER_H
+#define CONFIG_USER_H
 
 #include "config_common.h"
 
@@ -29,8 +29,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION     t.m.k. keyboard firmware for GH60
 
 /* key matrix size */
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 8
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 14
 
 /*
  * Keyboard Matrix Assignments
@@ -42,15 +42,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
  *         ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
-#define MATRIX_ROW_PINS { D2, D3, D1, D0, D4, C6, D7, E6  }
+ #define MATRIX_ROW_PINS { D0, D1, D2, D3, D5 }
 // Rev A
 // #define MATRIX_COL_PINS { F0, F1, E6, C7, C6, B6, D4, B1, B0, B5, B4, D7, D6, B3 }
 // Rev B/C
-#define MATRIX_COL_PINS { B4, B5, F0, F1, F4, F5, F6, F7  }
+   #define MATRIX_COL_PINS { F0, F1, E6, C7, C6, B6, D4, B1, B7, B5, B4, D7, D6, B3 }
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
-// #define DIODE_DIRECTION COL2ROW
+#define DIODE_DIRECTION COL2ROW
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCING_DELAY 5
@@ -59,7 +59,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 //#define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
-// #define BACKLIGHT_LEVELS 3
+#define BACKLIGHT_LEVELS 3
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
@@ -158,4 +158,33 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
+/*
+ * RGB Underglow
+ * These settings are for the F4 by default:
+ * 
+ *
+ * #define ws2812_PORTREG  PORTF
+ * #define ws2812_DDRREG   DDRF
+ * #define ws2812_pin PF4
+ * #define RGBLED_NUM 14     // Number of LEDs
+ * #define RGBLIGHT_HUE_STEP 10
+ * #define RGBLIGHT_SAT_STEP 17
+ * #define RGBLIGHT_VAL_STEP 17
+ *
+ * The firmware supports 5 different light effects, and the color (hue, saturation, brightness) can be customized in most effects. 
+ * To control the underglow, you need to modify your keymap file to assign those functions to some keys/key combinations. 
+ * For details, please check this keymap. keyboard/planck/keymaps/yang/keymap.c
+*/
+
+/* Deprecated code below
+#define ws2812_PORTREG  PORTF 
+#define ws2812_DDRREG   DDRF
+#define ws2812_pin PF4
+*/ 
+#define RGB_DI_PIN F4
+#define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 8         // Number of LEDs
+#define RGBLIGHT_HUE_STEP 8
+#define RGBLIGHT_SAT_STEP 8
+#define RGBLIGHT_VAL_STEP 8
 #endif
