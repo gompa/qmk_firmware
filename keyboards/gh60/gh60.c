@@ -35,5 +35,5 @@ void led_set_kb(uint8_t usb_led) {
 		// gh60_fn_led_off();
     // }
 
-	led_set_user(usb_led);
+	// led_set_user(usb_led);
 }
