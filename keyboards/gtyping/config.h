@@ -25,8 +25,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Gompa
-#define PRODUCT         gtyping
-#define DESCRIPTION     A custom keyboard
+#define PRODUCT         Gtyping
+#define DESCRIPTION     A Typewriter keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 8
@@ -57,12 +57,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define BACKLIGHT_BREATHING
 // #define BACKLIGHT_LEVELS 3
 
-
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCING_DELAY 3
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
-//#define MATRIX_HAS_GHOST
+#define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
 
@@ -111,8 +110,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* key combination for magic key command */
 #define IS_COMMAND() ( \
-    keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
+    keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_UP)) \
 )
+
 
 /* control how magic key switches layers */
 //#define MAGIC_KEY_SWITCH_LAYER_WITH_FKEYS  true
@@ -156,10 +156,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /* disable debug print */
-//#define NO_DEBUG
+#define NO_DEBUG
 
 /* disable print */
-//#define NO_PRINT
+#define NO_PRINT
 
 /* disable action features */
 //#define NO_ACTION_LAYER
