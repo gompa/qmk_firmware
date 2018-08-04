@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "suspend.h"
 #include "timer.h"
 #include "usb_main.h"
-
 #include "hardfault.h"
 #include "nuvoton.h"
 
