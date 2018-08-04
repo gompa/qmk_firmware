@@ -3,14 +3,11 @@ SRC += hardfault.c
 SRC += matrix.c
 SRC += nuvoton.c
 
-TMK_DIR = tmk_core
-CHIBIOS = lib/chibios
-CHIBIOS_CONTRIB = lib/chibios-contrib
 # GENERIC STM32F103C8T6 board - stm32duino bootloader
 #OPT_DEFS = -DCORTEX_VTOR_INIT=0x2000
 MCU_LDSCRIPT ?= NUC122SC1
 BOARD = NUC122_NUTINY
-
+CUSTOM_MATRIX=yes
 # GENERIC STM32F103C8T6 board - no bootloader (programmer over serial or SWD)
 # OPT_DEFS =
 # MCU_LDSCRIPT = STM32F103x8
@@ -60,8 +57,6 @@ USE_PROCESS_STACKSIZE = 0x400
 MCU_LDSCRIPT ?= NUC122SC1
 LDFLAGS += -Wl,--just-symbols=hardfault.symbols
 
-include $(TMK_DIR)/tool/chibios/common.mk
-include $(TMK_DIR)/tool/chibios/chibios.mk
 #BOOTMAGIC_ENABLE = yes	# Virtual DIP switch configuration
 MOUSEKEY_ENABLE = yes	# Mouse keys
 #EXTRAKEY_ENABLE = yes	# Audio control and System control
